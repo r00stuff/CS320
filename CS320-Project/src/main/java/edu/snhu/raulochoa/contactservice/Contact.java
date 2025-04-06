@@ -18,7 +18,7 @@ public class Contact {
     
 
     public Contact(String contactId, String firstName, String lastName, String phone, String address) {
-        // Validate each field based on the assignment requirements
+        // Validate each field based on the assignment requirements provided
         if (contactId == null || contactId.length() > CONTACT_ID_MAX_LENGTH) {
         	throw new IllegalArgumentException("Contact ID must be non-null and at most " + CONTACT_ID_MAX_LENGTH + " characters.");
         }
