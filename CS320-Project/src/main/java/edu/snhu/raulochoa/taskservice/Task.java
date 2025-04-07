@@ -1,4 +1,4 @@
-package main.java.edu.snhu.raulochoa.contactservice;
+package main.java.edu.snhu.raulochoa.taskservice;
 
 public class Task {
 	
@@ -38,11 +38,17 @@ public class Task {
 
 
 	public void setTaskName(String taskName) {
+		if (taskName == null || taskName.length() > TASK_NAME_MAX_LENGTH) {
+        	throw new IllegalArgumentException("The Task Name must be non-null and at most " + TASK_NAME_MAX_LENGTH + " characters.");
+        }
 		this.taskName = taskName;
 	}
 
 
 	public void setTaskDescription(String taskDescription) {
+		if (taskDescription == null || taskDescription.length() > TASK_DESCRIPTION_MAX_LENGTH) {
+        	throw new IllegalArgumentException("The Task Description must be non-null and at most " + TASK_DESCRIPTION_MAX_LENGTH + " characters.");
+        }
 		this.taskDescription = taskDescription;
 	}
 	
